@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>VR Polyglot Garden</title>
+
+  <!-- A-Frame VR Library -->
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<a-scene background="color: #CFFAFE">
+
+  <!-- Assets -->
+  <a-assets>
+    <audio id="hello-en" src="https://cdn.pixabay.com/audio/2022/03/15/audio_6b97a6f83c.mp3"></audio>
+    <audio id="hello-hi" src="https://cdn.pixabay.com/audio/2022/10/10/audio_74864f7f9f.mp3"></audio>
+    <audio id="hello-mr" src="https://cdn.pixabay.com/audio/2022/10/03/audio_1e6e8a7e2d.mp3"></audio>
+  </a-assets>
+
+  <!-- Camera + Cursor -->
+  <a-entity position="0 1.6 0">
+    <a-camera>
+      <a-cursor
+        fuse="true"
+        fuse-timeout="1000"
+        color="black">
+      </a-cursor>
+    </a-camera>
+  </a-entity>
+
+  <!-- Ground -->
+  <a-plane
+    rotation="-90 0 0"
+    width="30"
+    height="30"
+    color="#7BC47F">
+  </a-plane>
+
+  <!-- Sky -->
+  <a-sky color="#BEE7E8"></a-sky>
+
+  <!-- Title -->
+  <a-text
+    value="VR Polyglot Garden"
+    position="0 3 -4"
+    align="center"
+    width="8"
+    color="#2C3E50">
+  </a-text>
+
+  <a-text
+    value="Gaze at a pad to hear 'Hello'"
+    position="0 2.5 -4"
+    align="center"
+    width="6"
+    color="#34495E">
+  </a-text>
+
+  <!-- English Pad -->
+  <a-cylinder
+    position="-3 0.5 -5"
+    radius="0.6"
+    height="0.2"
+    color="#4CAF50"
+    sound="src: #hello-en; on: click">
+  </a-cylinder>
+
+  <a-text
+    value="Hello (English)"
+    position="-3 1.2 -5"
+    align="center"
+    width="4">
+  </a-text>
+
+  <!-- Hindi Pad -->
+  <a-cylinder
+    position="0 0.5 -5"
+    radius="0.6"
+    height="0.2"
+    color="#FF9800"
+    sound="src: #hello-hi; on: click">
+  </a-cylinder>
+
+  <a-text
+    value="नमस्ते (Hindi)"
+    position="0 1.2 -5"
+    align="center"
+    width="4">
+  </a-text>
+
+  <!-- Marathi Pad -->
+  <a-cylinder
+    position="3 0.5 -5"
+    radius="0.6"
+    height="0.2"
+    color="#03A9F4"
+    sound="src: #hello-mr; on: click">
+  </a-cylinder>
+
+  <a-text
+    value="नमस्कार (Marathi)"
+    position="3 1.2 -5"
+    align="center"
+    width="4">
+  </a-text>
+
+</a-scene>
+
+</body>
+</html>
+
